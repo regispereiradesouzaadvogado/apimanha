@@ -10,7 +10,7 @@ const path = require('path');
 const db = require('./db/db')
 
 const routes = require('./routes/routes'); //Importa as rotas// determina rotas que pode acessar
-
+const clienteRoutes = require ('./routes/clientesroutes')
 const corsOptions ={
     origin: ['http://localhost:3333', 'https://meudominio.com'],//lista de origens permitidas
     methods: 'GET,POST,PUT, PATCH,DELETE', //Métodos HTTP permitidos
@@ -38,6 +38,8 @@ app.get('/',(req,res) =>{
 //Configuração de rotas
 //APÓS DECLARAR NOSSAS, AQUI FALAMOS PARA NOSSO APP USAR ELAS COMO REFERÊNCIA
 app.use('/',routes);
+
+app.use('/', clienteRoutes);
 
 //Middleware de tratamento de erros
 app.use((err,req,res,next) =>{  //função anonima
