@@ -4,7 +4,7 @@ const produtoController= require('../controller/produtocontroller');
 
 router.get('/produto', produtoController.listarProduto);
 
-router.get('produto/:idProduto',produtoController.listarProdutoIdProduto);
+router.get('produto/:idProduto',produtoController.listarIdProduto);
 
 router.post('/produto', produtoController.adicionarProduto);
 
